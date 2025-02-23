@@ -115,11 +115,11 @@ register to be loaded from the data bus instead of the operand. Tim made
 a similar change for his LCPU design, allowing for the address register
 to be loaded from the accumulator.
 
-<figure id="fig:indirect_mode" align="center">
+<p><figure id="fig:indirect_mode" align="center">
 <img src="images/architecture/indirect-addressing-mode.jpg"
 style="width:10cm" />
-<figcaption>Indirect addressing mode</figcaption>
-</figure>
+<figcaption><em>Indirect addressing mode</em></figcaption>
+</figure></p>
 
 The address in the operand (A) points to a vector table in memory
 containing the effective address (EA) which in turn points to the
@@ -154,10 +154,10 @@ The entity of the extended version of the MCPU is near identical to the
 basic design. The only difference is the address size which is 9 bits
 instead of 6.
 
-<figure id="fig:entity" align="center">
+<p><figure id="fig:entity" align="center">
 <img src="images/architecture/entity_mcpu_ext.png" style="width:10cm" />
-<figcaption>MCPU-ext VHDL entity</figcaption>
-</figure>
+<figcaption><em>MCPU-ext VHDL entity</em></figcaption>
+</figure></p>
 
 This is where the similarities end however, as the VHDL implementation
 has been completely re-written from scratch. Instead of optimizing for
@@ -171,10 +171,10 @@ have the same interface as readily available register ICs. The
 accumulator register is reduced to 8 bits by separating the carry bit,
 leaving all 3 registers identical.
 
-<figure id="fig:reg_univ_1" align="center">
+<p><figure id="fig:reg_univ_1" align="center">
 <img src="images/architecture/reg_univ.png" style="width:5cm" />
-<figcaption>Universal register</figcaption>
-</figure>
+<figcaption><em>Universal register</em></figcaption>
+</figure></p>
 
 
 ### SRAM trouble
@@ -186,10 +186,10 @@ created an amazing core memory module which could be a *somewhat
 practical* solution for such an amount of memory. But a more realistic
 approach would be the use of a chip like the REN-6116 from RENESAS.
 
-<figure id="fig:entity" align="center">
+<p><figure id="fig:entity" align="center">
 <img src="images/architecture/REN_6116_pinout.png" style="width:5cm" />
-<figcaption>MCPU-ext vhdl entity</figcaption>
-</figure>
+<figcaption><em>MCPU-ext vhdl entity</em></figcaption>
+</figure></p>
 
 With its 11 bit address bus, 2 extra bits can be connected to dip
 switches to enable multiple programs to be loaded and chosen from.  
@@ -197,10 +197,10 @@ When implementing both the CPU and SRAM on an FPGA a problem arises. The
 SRAM above is non-synchronous, and therefore has no clock. But in most
 FPGA’s the SRAM is synchronous and is edge triggered.
 
-<figure id="fig:sram_ip" align="center">
+<p><figure id="fig:sram_ip" align="center">
 <img src="images/architecture/vivado/sram_ip.png" style="width:14cm" />
-<figcaption>SRAM IP</figcaption>
-</figure>
+<figcaption><em>SRAM IP</em></figcaption>
+</figure></p>
 
 ### Simulation
 
@@ -208,10 +208,10 @@ In order to simulate the CPU, a testbench has to be created to connect
 our CPU to an SRAM from an IP as showed above, as well as clock and
 reset signals.
 
-<figure id="fig:simulation_1" align="center">
+<p><figure id="fig:simulation_1" align="center">
 <img src="images/architecture/vivado/simu_mcpu_ext_ok_jcs6.png" />
-<figcaption>Simulation</figcaption>
-</figure>
+<figcaption><em>Simulation</em></figcaption>
+</figure></p>
 
 The resulting waveforms can than be inspected and compared to the
 software emulator output, which after some trial and error eventually
