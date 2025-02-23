@@ -70,11 +70,11 @@ of art. Feel free to disagree.
 
 ## Original MCPU
 
-<figure id="fig:original_architecture" align="center">
+<p><figure id="fig:original_architecture" align="center">
 <img src="images/architecture/base_architecture.png"
 style="width:10cm" />
-<figcaption>Original MCPU architecture</figcaption>
-</figure>
+<figcaption><em>Original MCPU architecture</em></figcaption>
+</figure></p>
 
 With a 6 bit address register this design can address 64 bytes of
 memory. While this minimal CPU is intended as an educational tool
