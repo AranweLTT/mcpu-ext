@@ -1,4 +1,13 @@
-def emulate(input_file):
+def emulate(input_file: str, cycles: int = 20):
+    """
+    < Simulates program from file >
+    Input:
+      - Compiled program path (typically .obj type)
+      - Number of cycles to run (default: 20)
+    Output:
+      - Prints cpu state for the first 100 cycles
+      - Memory location 0xFF will print the accumulator
+    """
     with open(input_file, 'r') as f:
         mem = [int(x, 16) for x in f.readlines()]
 
@@ -14,7 +23,7 @@ def emulate(input_file):
         op, arg = ir >> 6, ir & 0x3F
 
         # Display cpu state
-        if cycles < 1000:
+        if cycles < 100:
             print('pc,ir,acc,cf:', pc-1, hex(ir), acc, cf >> 8, sep='\t')
 
         # Run instruction
@@ -46,4 +55,4 @@ if __name__ == "__main__":
 
     input_file = sys.argv[1]
     
-    emulate(input_file)
+    emulate(input_file, cycles)
